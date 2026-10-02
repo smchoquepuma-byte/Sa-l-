@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MISSION SAÚL // 01</title>
+<style>
+:root{--red:#e3262e;--blue:#0b4cff;--dark:#05070d;--cyan:#35e7ff}
+*{box-sizing:border-box} body{margin:0;background:#02040a;color:#fff;font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 50% 20%,#18264d 0,transparent 42%),linear-gradient(135deg,#02040a,#090d18);z-index:-3}
+body:after{content:"";position:fixed;inset:0;opacity:.14;background-image:linear-gradient(#fff1 1px,transparent 1px),linear-gradient(90deg,#fff1 1px,transparent 1px);background-size:38px 38px;z-index:-2}
+.screen{min-height:100vh;display:none;place-items:center;padding:28px}.screen.active{display:grid}
+.card{width:min(720px,94vw);border:1px solid #ffffff28;background:#080c16dd;box-shadow:0 0 50px #000,0 0 30px #e3262e18;backdrop-filter:blur(12px);padding:34px;border-radius:22px;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--red),var(--blue),var(--cyan))}
+.kicker{font:700 12px monospace;letter-spacing:4px;color:var(--cyan)}h1{font-size:clamp(42px,9vw,82px);line-height:.9;margin:18px 0 10px;text-transform:uppercase}h2{font-size:clamp(28px,6vw,48px);margin:10px 0}p{font-size:18px;line-height:1.65;color:#d8dce7}
+.glitch{animation:glitch 2.2s infinite}.red{color:#ff4750}.blue{color:#5d8cff}.heart{color:#ff5360}
+button{border:1px solid #ffffff44;background:#101827;color:#fff;padding:15px 24px;border-radius:10px;font-weight:800;letter-spacing:2px;cursor:pointer;transition:.2s;margin-top:15px}button:hover{transform:translateY(-2px);background:#172338;box-shadow:0 0 22px #2d7dff55}
+.progress{height:4px;background:#ffffff12;border-radius:99px;margin-top:25px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--blue),var(--cyan));transition:1s}
+.console{background:#02050a;border:1px solid #35e7ff33;padding:18px;border-radius:12px;font:14px/1.8 monospace;color:#8cf3ff;margin:20px 0}.ok{color:#7cff9b}.muted{color:#798396}
+.web{position:absolute;width:180px;height:180px;border:1px solid #fff1;border-radius:50%;right:-80px;top:-80px}.web:before,.web:after{content:"";position:absolute;inset:25px;border:1px solid #fff1;border-radius:50%}.web:after{inset:0;border-radius:50%;border-top-color:#fff5;border-bottom-color:#fff5}
+.bigheart{font-size:85px;animation:pulse 1.2s infinite;display:inline-block}
+.candy{display:inline-block;font-size:44px;margin:12px;animation:float 2s ease-in-out infinite}.candy:nth-child(2){animation-delay:.3s}.candy:nth-child(3){animation-delay:.6s}
+.secret{font-size:13px;color:#596275;margin-top:22px}
+@keyframes glitch{0%,90%,100%{text-shadow:none}92%{text-shadow:3px 0 #e3262e,-3px 0 #35e7ff}94%{transform:skewX(-2deg)}96%{transform:skewX(2deg)}}
+@keyframes pulse{50%{transform:scale(1.12);filter:drop-shadow(0 0 25px #e3262e)}}@keyframes float{50%{transform:translateY(-9px)}}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#111a2b;border:1px solid #ffffff22;padding:12px 18px;border-radius:9px;display:none;font:13px monospace}
+</style>
+</head>
+<body>
+
+<div id="s1" class="screen active"><div class="card">
+<div class="web"></div><div class="kicker">SISLEY SYSTEMS // PRIVATE ACCESS</div>
+<h1 class="glitch"><span class="red">MISSION</span><br>SAÚL</h1>
+<p>Hola, ingeniero. Has recibido un paquete de datos no solicitado.</p>
+<div class="console">
+> identity: <span class="ok">SAÚL ISAAC</span><br>
+> sender: <span class="ok">SISLEY</span><br>
+> threat level: <span class="heart">LOVE</span><br>
+> payload: <span class="muted">CLASSIFIED</span>
+</div>
+<button onclick="go(2)">[ INICIAR MISIÓN ]</button>
+<div class="progress"><div class="bar" id="bar"></div></div>
+</div></div>
+
+<div id="s2" class="screen"><div class="card">
+<div class="kicker">PHASE 01 // AUTHENTICATION</div>
+<h2>Verificando identidad…</h2>
+<div class="console" id="terminal"></div>
+<p>Solo una persona puede desbloquear este sistema.</p>
+<button onclick="go(3)">VERIFICAR ACCESO</button>
+</div></div>
+
+<div id="s3" class="screen"><div class="card">
+<div class="kicker">PHASE 02 // SUPPLY DROP</div>
+<h2>🍫 Suministros detectados</h2>
+<p>Todo héroe necesita energía para completar una misión.</p>
+<div style="text-align:center"><span class="candy">🍬</span><span class="candy">🍫</span><span class="candy">🍭</span></div>
+<p>Pero estos no llegaron por accidente.</p>
+<p><b>Fueron elegidos para ti por alguien que te conoce y quería endulzarte el día. ❤️</b></p>
+<button onclick="go(4)">CONTINUAR</button>
+</div></div>
+
+<div id="s4" class="screen"><div class="card">
+<div class="kicker">PHASE 03 // HUMAN MESSAGE</div>
+<h2>Fuera del código…</h2>
+<p>Saúl ❤️</p>
+<p>No quería darte solamente una cajita con dulces. Quería dejarte un pequeño recuerdo de este día y recordarte que eres alguien muy especial para mí.</p>
+<p>Me hacen feliz nuestras pequeñas cosas: nuestras conversaciones, nuestras risas, nuestros momentos y hasta esas tonterías que terminan convirtiéndose en recuerdos.</p>
+<p>Gracias por ser mi compañero en esta etapa. Espero que sigamos acumulando muchos momentos bonitos juntos.</p>
+<p><b>Feliz Día del Novio, mi Saúl. ❤️</b></p>
+<button onclick="go(5)">DESBLOQUEAR ÚLTIMA FASE</button>
+</div></div>
+
+<div id="s5" class="screen"><div class="card" style="text-align:center">
+<div class="kicker">FINAL BOSS // REWARD</div>
+<div class="bigheart">🕷️</div>
+<h2>MISSION COMPLETE</h2>
+<p>Tu recompensa no cabe dentro de este sistema.</p>
+<div class="console" style="text-align:left">
+PACKAGE STATUS: <span class="ok">READY</span><br>
+CONTENTS: <span class="ok">SPIDER-MAN BOX + SWEETS</span><br>
+RECIPIENT: <span class="ok">SAÚL ISAAC</span><br>
+AUTHORIZED BY: <span class="ok">SISLEY ❤️</span>
+</div>
+<p><b>Ahora sí… ve a buscar tu regalo. 👀</b></p>
+<p class="secret">Easter egg: si llegaste hasta aquí, ya tienes acceso permanente a mi corazón.</p>
+<button onclick="launch()">🕷️ LANZAR TELARAÑA</button>
+</div></div>
+
+<div id="toast">ACCESS GRANTED ❤️</div>
+
+<script>
+let current=1;
+const audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+function beep(freq=440,duration=.08,type="sine"){
+ try{let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.value=freq;g.gain.setValueAtTime(.035,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+duration);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+duration)}catch(e){}
+}
+function go(n){
+ audioCtx.resume(); beep(n*110,.12,n%2?"square":"sine");
+ document.getElementById("s"+current).classList.remove("active");
+ current=n; document.getElementById("s"+n).classList.add("active");
+ document.getElementById("bar").style.width=((n-1)/4*100)+"%";
+ if(n===2) terminal();
+ if(n===5){for(let i=0;i<3;i++)setTimeout(()=>beep(520+i*140,.16,"triangle"),i*180)}
+}
+function terminal(){
+ const lines=["> scanning...","> biometric match...","> relationship status: CONFIRMED","> favorite person: SISLEY","> access: GRANTED ❤️"];
+ const el=document.getElementById("terminal");el.innerHTML="";
+ lines.forEach((x,i)=>setTimeout(()=>{el.innerHTML+=x+"<br>";beep(330+i*70,.06)},i*550));
+}
+function launch(){
+ beep(880,.15,"sawtooth");setTimeout(()=>beep(1320,.2,"triangle"),150);
+ document.getElementById("toast").style.display="block";
+ setTimeout(()=>document.getElementById("toast").style.display="none",2500);
+}
+document.addEventListener("click",()=>audioCtx.resume(),{once:true});
+</script>
+</body>
+</html>
